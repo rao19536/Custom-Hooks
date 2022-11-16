@@ -41,6 +41,7 @@ const useCallApi = (url, method) => {
     }
     useEffect(()=>{
         checkMethodType(url, method)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[url, method])
     return {isLoading, data, error}
 }

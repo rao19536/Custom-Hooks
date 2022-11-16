@@ -22,6 +22,7 @@ const ProductContainer = () => {
     }
     useEffect(()=>{
         userData(page, pageSize, data)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[page, pageSize, data])
 
     return (

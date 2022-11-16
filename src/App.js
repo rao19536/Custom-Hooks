@@ -1,9 +1,13 @@
-import ProductContainer from './Containers/ProductContainer/index.js';
+import ProductContainer from './Containers/ProductContainer/index.js'
+import Header from './Components/HeaderComponent/index.js';
 import './App.css'
 
 function App() {
   return (
-    <ProductContainer />
+    <>
+      <Header />
+      <ProductContainer />
+    </>
   );
 }
 
