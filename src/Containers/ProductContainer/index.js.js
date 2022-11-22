@@ -13,13 +13,16 @@ const ProductContainer = () => {
     const [pageSize, setPageSize] = useState(9)
     const [userInfo, serUserInfo] = useState([])
 
-    const {isLoading, data, error} = useCallApi('https://fakestoreapi.com/products/', 'get')
-    const userData = () =>{
+    const {getRequest,isLoading, data, error} = useCallApi('https://fakestoreapi.com/products/', 'get')
+    const userData = () => {
         serUserInfo(onChangePagination(page, pageSize, data))
     }
     const handleChange = (page)=>{
         setPage(page)
     }
+    useEffect(()=>{
+        getRequest()
+    },[])
     useEffect(()=>{
         userData(page, pageSize, data)
     // eslint-disable-next-line react-hooks/exhaustive-deps
