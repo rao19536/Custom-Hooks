@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ParentContainer from '../../Components/ParentContainer'
+import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import useCallApi from '../../CustomHooks/CallApi/useCallApi'
 import ProductComponent from '../../Components/ProductComponent'
@@ -26,11 +26,11 @@ const ProductContainer = () => {
     },[page, pageSize, data])
 
     return (
-    <ParentContainer>
+    <Container maxWidth="xl">
     {!isLoading ? !error ? (
         <>
             <Style.StyledTypography>Products For Sale</Style.StyledTypography>
-            <Grid container spacing={1}>
+            <Grid container spacing={2}>
                 {userInfo.map((val, index)=>(
                     <ProductComponent 
                         product={val}
@@ -49,7 +49,7 @@ const ProductContainer = () => {
         ):(
         <Style.StyledCircularProgress />
     )}
-    </ParentContainer>
+    </Container>
   )
 }
 export default ProductContainer

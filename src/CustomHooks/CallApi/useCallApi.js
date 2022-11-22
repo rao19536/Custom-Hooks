@@ -7,7 +7,7 @@ const useCallApi = (url, method) => {
     const [isLoading,setIsLoading] = useState(false)
     const methodArr = ['get', 'post', 'put']
 
-    const getFunc = async (url, method) => {
+    const getFunc = async (url, method, data={}) => {
         try{
             setIsLoading(true)
             const apiResponse = await axios({
@@ -24,8 +24,10 @@ const useCallApi = (url, method) => {
             setIsLoading(false)
         }
     }
-    const postFunc = async (url, method) => {console.log('postFunc')}
-    const putFunc = async (url, method) => {console.log('putFunc')}
+    const postFunc = async (url, method, data) => {
+        console.log('postFunc', data)
+    }
+    const putFunc = async (url, method, data) => {console.log('putFunc')}
     const isMehtod = (method) =>{
         return methodArr.includes(method)
     }
@@ -43,7 +45,7 @@ const useCallApi = (url, method) => {
         checkMethodType(url, method)
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[url, method])
-    return {isLoading, data, error}
+    return {isLoading, data, error,postFunc}
 }
 
 export default useCallApi

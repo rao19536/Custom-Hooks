@@ -4,7 +4,7 @@ import ButtonBase from '@mui/material/ButtonBase'
 
 export const StyledPaper = styled(Paper)(({theme})=>({
     padding: '15px',
-    marginTop: '10px',
+    // marginTop: '10px',
     maxWidth: 500,
     boxShadow:'0px 10px 20px 2px rgba(0, 0, 0, 0.25)',
     flexGrow: 1,
